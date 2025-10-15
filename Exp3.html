@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interactive Text Styling</title>
+<style>
+#editor {
+display: none; /* Initially hidden */
+border: 1px solid #ccc;
+padding: 10px;
+margin-top: 10px;
+width: 80%;
+min-height: 100px;
+}
+.toolbar button {
+margin-right: 5px;
+}
+</style>
+</head>
+<body>
+<h2>Interactive Text Editor</h2>
+<!-- Show Editor Button -->
+<button onclick="showEditor()">Show Editor</button>
+<!-- Styling Toolbar -->
+<div class="toolbar" style="margin-top:10px; display:none;" id="toolbar">
+<button onclick="formatText('bold')"><b>B</b></button>
+<button onclick="formatText('italic')"><i>I</i></button>
+<button onclick="formatText('underline')"><u>U</u></button>
+</div>
+<!-- Editable Division -->
+<div id="editor" contenteditable="true">
+You can edit this text. Select any part and click the buttons above to style it.
+</div>
+<script>
+function showEditor() {
+// Show the editor and toolbar
+document.getElementById("editor").style.display = "block";
+document.getElementById("toolbar").style.display = "block";
+}
+function formatText(command) {
+// Apply the text formatting (bold, italic, underline)
+document.execCommand(command, false, null);
+}
+</script>
+</body>
+</html>
