@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM Manipulation Example</title>
+<style>
+.highlight {
+color: gray;
+font-size: 16px;
+}
+</style>
+</head>
+<body>
+<h1 id="mainHeading">Original Heading</h1>
+<p class="highlight">This is the first paragraph.</p>
+<p class="highlight">This is the second paragraph.</p>
+<button onclick="manipulateDOM()">Click to Manipulate DOM</button>
+<script>
+function manipulateDOM() {
+// 1. Use getElementById to change content and style of a specific element
+let heading = document.getElementById("mainHeading");
+heading.textContent = "Updated Heading via getElementById!";
+heading.style.color = "blue";
+heading.style.fontSize = "32px";
+// 2. Use getElementsByClassName to change style and content of multiple elements
+let paragraphs = document.getElementsByClassName("highlight");
+for (let i = 0; i < paragraphs.length; i++) {
+paragraphs[i].textContent = "Updated paragraph " + (i + 1);
+paragraphs[i].style.color = "green";
+paragraphs[i].style.fontWeight = "bold";
+}
+}
+</script>
+</body></html>
